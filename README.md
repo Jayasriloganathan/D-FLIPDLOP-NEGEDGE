@@ -31,14 +31,37 @@ Next state of D flip-flop is always equal to data input, D for every positive tr
 /* write all the steps invloved */
 
 **PROGRAM**
+```
+module d_ff_neg_edge (d, clk, rst, q);
+ input d, clk, rst;
+ output reg q;
+ always @(negedge clk or posedge rst) begin
+ if (rst)
+ q <= 0; // Reset the flip-flop
+ else
+ q <= d; // D input is passed to Q on the negative clock edge
+ end
+ endmodule
+```
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program for flipflops and verify its truth table in quartus using Verilog programming.
+```
+Developed by:Jayasri L
+ RegisterNumber:24900407
+```
 */
 
 **RTL LOGIC FOR FLIPFLOPS**
 
+![Screenshot 2024-12-17 125159](https://github.com/user-attachments/assets/409611b7-114d-442e-b248-876c6e70a581)
+
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+![Screenshot 2024-12-17 125212](https://github.com/user-attachments/assets/82de6259-5be9-404d-86ee-fd18909f60c9)
+
 
 **RESULTS**
+
+ Sucessfully implemented D flipflop using verilog and validating their functionality using
+ their functional tables
